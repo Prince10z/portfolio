@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profolio Piyush Thakur</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logos/icons8-portfolio-96.png">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="StyleSheet" href="../css/externalStyle.css">
+    <link rel="StyleSheet" href="../css/style.css">
+
+</head>
+
+<body>
+    <div id="overlay" class="hidden"></div>
+    <div id="customAlert" class="hidden">
+        <div id="alertMessage"></div>
+        <div id="posiClose"><button id="closeAlert">Close</button></div>
+
+    </div>
+    <div class="context">
+        <div id="fixedheader">
+            <div class="headers">
+                <span><a href="#">Piyush|Portfolio</a> </span>
+                <span id="itemHeaders">
+                    <a href="#about"> <span class="hivorText">About</span></a>
+                    <a href="#work"><span class="hivorText">Work</span></a>
+                    <a href="#projects"> <span class="hivorText">Projects</span></a>
+                    <a href="#contact"><span class="hivorText">Contact</span></a>
+                    <span class="hivorText headericons" id="githubIcon"><a href="https://github.com/Prince10z"
+                            target="_blank"><i class="fa-brands fa-github fa-lg "
+                                style="color: #b2a4e0;"></i></a></span>
+                    <span class="hivorText headericons" id="linkedinIcon"><a
+                            href="https://www.linkedin.com/in/piyush-thakur-5268a3226/" target="_blank"><i
+                                class="fa-brands fa-linkedin fa-lg" style="color: #b2a4e0;"></i></a></span>
+                </span>
+            </div>
+        </div>
+
+
+
+        <div class="mainSaction">
+            <div id="Saction1">
+                <div class="about">
+                    <h1>
+                        <a href="" class="typewrite" data-period="2000"
+                            data-type='[ "Hi, I am Piyush Thakur", "I am full stack developer.", "I Love Design.", "I Love to Develop.", "Good at futter", "Also good at web development","And in backend" ]'>
+
+                            <span class="wrap"></span>
+                        </a>
+
+
+                    </h1>
+                    <br>
+                    <div>
+                        this is the testcase
+                    </div>
+
+                </div>
+                <div id="ProfileImage">
+                    <img src="../assets/images/IMG_0174.jpg" />
+                </div>
+            </div>
+            <div class="arrow" onclick="scrollDown()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <section id="about">
+                <div class="headings">INTRODUCTION</div>
+                <h1 id="intro">
+                </h1>
+            </section>
+
+            <!-- Moved Contact form here -->
+
+            <div id="contact">
+                <form>
+                    <span style="font-size: 30px; "><span style="color: #b2a4e0;">C</span>ontact <span
+                            style=" color: #b2a4e0;">m</span>e</span>
+                    <input type="text" class="formitem" id="fullname" placeholder="Your Full Name" autocomplete="off">
+                    <input type="email" class="formitem" id="email" placeholder="Your Email" autocomplete="off">
+                    <textarea class="formitem" id="msg" rows="4" cols="50" placeholder="Your Message"
+                        autocomplete="off"></textarea>
+                    <button id="submitForm">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="testcase"></div>
+    </div>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+
+    <script src="../js/script.js"></script>
+    <script type="module" src="../js/animationstyles.js"></script>
+    <script src="../js/linkes.js"></script>
+    <script type="module">
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        // import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        // // TODO: Add SDKs for Firebase products that you want to use
+        // // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // // Your web app's Firebase configuration
+        // const firebaseConfig = {
+        //     apiKey: "AIzaSyAjiZuwCXOh_WW0WUQMZMfe3GqBWDwzipA",
+        //     authDomain: "connectusers-e18bf.firebaseapp.com",
+        //     databaseURL: "https://connectusers-e18bf-default-rtdb.firebaseio.com",
+        //     projectId: "connectusers-e18bf",
+        //     storageBucket: "connectusers-e18bf.appspot.com",
+        //     messagingSenderId: "303409439609",
+        //     appId: "1:303409439609:web:e58f97510917e61cc885a8"
+        // };
+
+        // // Initialize Firebase
+        // const app = initializeApp(firebaseConfig);
+
+        // //get ref to database services
+        const subBut = document.getElementById("submitForm");
+        subBut.addEventListener("click", async function (e) {
+            e.preventDefault(); // Prevent the default form submission behavior
+
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const msg = document.getElementById('msg').value;
+
+            subBut.innerText = "Sending...";
+
+
+
+            try {
+                // Set the data in the database
+                // await set(ref(db, "user/" + fullname), {
+                //     Fullname: fullname,
+                //     Email: email,
+                //     Msg: msg
+                // });
+
+                // Display "Message Sent" alert after 2 seconds
+                setTimeout(() => {
+                    showAlert("An error occurred. Please try again later");
+                    // showAlert("Message Sent");
+                    // alert("Message Sent");
+                }, 2000);
+            } catch (error) {
+                console.error("Error sending message:", error);
+                showAlert("An error occurred while sending the message");
+            } finally {
+                // Reset button text back to "Send Message"
+                subBut.innerText = "Send Message";
+            }
+        });
+
+    </script>
+</body>
+
+</html>
