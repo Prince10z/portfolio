@@ -54,7 +54,11 @@
                     </h1>
                     <br>
                     <div>
-                        this is the testcase
+                        I develop web applications, user interfaces
+                        with good design.
+
+                        If you're interested, I would be delighted to have a conversation
+                        and discuss further details.
                     </div>
 
                 </div>
@@ -77,7 +81,7 @@
             <!-- Moved Contact form here -->
 
             <div id="contact">
-                <form>
+                <form name="form1">
                     <span style="font-size: 30px; "><span style="color: #b2a4e0;">C</span>ontact <span
                             style=" color: #b2a4e0;">m</span>e</span>
                     <input type="text" class="formitem" id="fullname" placeholder="Your Full Name" autocomplete="off">
@@ -111,63 +115,7 @@
     <script src="./js/script.js"></script>
     <script type="module" src="./js/animationstyles.js"></script>
     <script src="./js/linkes.js"></script>
-    <script type="module">
-        // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        // import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        // // TODO: Add SDKs for Firebase products that you want to use
-        // // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // // Your web app's Firebase configuration
-        // const firebaseConfig = {
-        //     apiKey: "AIzaSyAjiZuwCXOh_WW0WUQMZMfe3GqBWDwzipA",
-        //     authDomain: "connectusers-e18bf.firebaseapp.com",
-        //     databaseURL: "https://connectusers-e18bf-default-rtdb.firebaseio.com",
-        //     projectId: "connectusers-e18bf",
-        //     storageBucket: "connectusers-e18bf.appspot.com",
-        //     messagingSenderId: "303409439609",
-        //     appId: "1:303409439609:web:e58f97510917e61cc885a8"
-        // };
-
-        // // Initialize Firebase
-        // const app = initializeApp(firebaseConfig);
-
-        // //get ref to database services
-        const subBut = document.getElementById("submitForm");
-        subBut.addEventListener("click", async function (e) {
-            e.preventDefault(); // Prevent the default form submission behavior
-
-            const fullname = document.getElementById('fullname').value;
-            const email = document.getElementById('email').value;
-            const msg = document.getElementById('msg').value;
-
-            subBut.innerText = "Sending...";
-
-
-
-            try {
-                // Set the data in the database
-                // await set(ref(db, "user/" + fullname), {
-                //     Fullname: fullname,
-                //     Email: email,
-                //     Msg: msg
-                // });
-
-                // Display "Message Sent" alert after 2 seconds
-                setTimeout(() => {
-                    showAlert("An error occurred. Please try again later");
-                    // showAlert("Message Sent");
-                    // alert("Message Sent");
-                }, 2000);
-            } catch (error) {
-                console.error("Error sending message:", error);
-                showAlert("An error occurred while sending the message");
-            } finally {
-                // Reset button text back to "Send Message"
-                subBut.innerText = "Send Message";
-            }
-        });
-
-    </script>
 </body>
 
 </html>
