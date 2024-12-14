@@ -115,11 +115,14 @@ function submitForms() {
   const namevalue = document.getElementById("fullname").value;
   const emailvalue = document.getElementById("email").value;
   const msgvalue = document.getElementById("msg").value;
+  const LoaderScreen = document.getElementById("loaderScreen");
+  LoaderScreen.style.display = "flex";
   if (
     namevalue.trim() == "" ||
     emailvalue.trim() == "" ||
     msgvalue.trim() == ""
   ) {
+    LoaderScreen.style.display = "none";
     // showAlert("First fill the required info");
     showToast("Error", "First fill the required info");
     console.log(
@@ -135,8 +138,8 @@ function submitForms() {
       document.getElementById("msg").focus();
     }
   } else {
-    console.log("test2");
     if (!ValidateEmail(emailvalue)) {
+      LoaderScreen.style.display = "none";
       // showAlert("Invalid email address.");
       showToast("Error", "Invalid email address.");
       document.getElementById("email").focus();
@@ -157,6 +160,7 @@ function submitForms() {
     fetch(sendingUrl, reqOpt)
       .then((response) => {
         if (!response.ok) {
+          LoaderScreen.style.display = "none";
           if (response.status == 500) {
             // showAlert("Please check your internet connection");
             showToast("Error", "Please check your internet connection");
@@ -172,11 +176,13 @@ function submitForms() {
         return response.json();
       })
       .then((response) => {
+        LoaderScreen.style.display = "none";
         showToast("Success", "You have successfully send the msg");
         // showAlert("Successfully send");
         console.log(response.status); // Assuming response contains a status property
       })
       .catch((e) => {
+        LoaderScreen.style.display = "none";
         // showAlert(`Please try again`);
         showToast("Error", "Please try again");
         console.error("Error in sending message:", e.message);
