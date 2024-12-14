@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "sans-serif";
+}
+.toast {
+  position: fixed;
+  z-index: 300;
+  top: 25px;
+  right: 35px;
+  border-radius: 12px;
+  padding: 20px 35px 20px 25px;
+  background: white;
+  color: black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid rgba(136, 111, 165);
+  overflow: hidden;
+  transform: translateX(calc(100% + 35px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+}
+.toastWrong {
+  border-left: 6px solid rgba(170, 34, 34);
+}
+.toast.active {
+  transform: translateX(0%);
+}
+.toast .toast-content {
+  display: flex;
+  align-items: center;
+}
+.toast-content .check {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(136, 111, 165);
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.toast-content .wrong {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(170, 34, 34);
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.toast-content .message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.message .text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+}
+.message .text.text-1 {
+  font-weight: 600;
+  color: #333;
+}
+.toast .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.toast .close:hover {
+  opacity: 1;
+}
+.toast .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ddd;
+}
+.toast .progress::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(136, 111, 165);
+}
+.toast .progress.active::before {
+  animation: progress 5s linear forwards;
+}
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}
+.toast .wrongprogress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ddd;
+}
+.toast .wrongprogress::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(170, 34, 34);
+}
+.toast .wrongprogress.active::before {
+  animation: wrongProgress 5s linear forwards;
+}
+
+@keyframes wrongProgress {
+  100% {
+    right: 100%;
+  }
+}
