@@ -80,19 +80,25 @@ linkedinIcon.addEventListener("mouseenter", function () {
 linkedinIcon.addEventListener("mouseleave", function () {
   this.querySelector("i").style.color = "#b2a4e0";
 });
+const allsubBut = document.getElementsByClassName("buttonSubmit");
 const subBut = document.getElementById("submitForm");
+
 subBut.addEventListener("click", (e) => {
   e.preventDefault();
   // submitForm();
   submitForms();
 });
-subBut.addEventListener("mouseup", () => {
-  subBut.style.boxShadow = "1px 1px 9px rgba(136, 111, 165, 0.3)";
-});
 
-subBut.addEventListener("mousedown", () => {
-  subBut.style.boxShadow = "1px 1px 9px rgba(136, 111, 165, 0.9)";
-});
+// Loop through the collection and add event listeners
+for (let button of allsubBut) {
+  button.addEventListener("mouseup", () => {
+    button.style.boxShadow = "1px 1px 9px rgba(136, 111, 165, 0.3)";
+  });
+
+  button.addEventListener("mousedown", () => {
+    button.style.boxShadow = "1px 1px 9px rgba(136, 111, 165, 0.9)";
+  });
+}
 
 function ValidateEmail(input) {
   var validRegex =

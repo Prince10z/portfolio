@@ -275,8 +275,7 @@ body {
   height: 120px;
   padding-top: 10px;
 }
-
-#submitForm {
+.buttonSubmit {
   background-color: rgba(136, 111, 165, 0.5);
   border-radius: 10px;
   padding: 10px 20px;
@@ -285,6 +284,9 @@ body {
   font-weight: 800;
   box-shadow: 1px 1px 9px rgba(136, 111, 165, 0.3);
 }
+/* #submitForm {
+
+} */
 
 /*Custom Alert.............................*/
 #overlay {

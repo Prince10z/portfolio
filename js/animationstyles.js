@@ -70,7 +70,7 @@ link.addEventListener("click", (event) => {
 function animateIntroText() {
   const introText = document.getElementById("intro");
   const introbody =
-    "I'm a seasoned software designer and developer with extensive experience in Flutter and the MERN stack. Renowned for my problem-solving skills, I have successfully delivered diverse projects by simplifying complex requirements. I am enthusiastic about exploring new challenges and cutting-edge technologies to deliver impactful solutions that adapt to evolving needs.";
+    "I am an experienced software designer and developer, specializing in Flutter and the MERN stack. With a strong track record of solving complex problems, I have successfully delivered a wide range of projects by translating intricate requirements into effective solutions. I am passionate about tackling new challenges and leveraging emerging technologies to create impactful solutions that evolve with changing demands.";
 
   // Split the intro text into individual words
   const words = introbody.split(" ");
