@@ -213,7 +213,20 @@ body {
   object-fit: cover;
   aspect-ratio: 1 / 1; /* Ensures the image is a perfect circle */
 }
+@media (max-width: 1200px) {
+  #Saction1 {
+    flex-direction: column-reverse; /* Image above text in mobile view */
+    align-items: center; /* Center the content */
+  }
 
+  .about {
+    text-align: center;
+  }
+
+  #ProfileImage {
+    margin-bottom: 20px; /* Add space between the image and text */
+  }
+}
 .testcase {
   height: 100vh;
 }
