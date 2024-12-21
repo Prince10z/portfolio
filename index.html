@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profolio Piyush Thakur</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logos/icons8-portfolio-96.png">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="StyleSheet" href="./css/externalStyle.css">
+    <link rel="StyleSheet" href="./css/style.css">
+    <link rel="StyleSheet" href="./css/Notifications.css">
+    <link rel="StyleSheet"href="./css/sendingMsgAnimation.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="output.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="loaderScreen">
+        <div class="container" >
+            <div class="box">
+                <div class="border one"></div>
+                <div class="border two"></div>
+                <div class="border three"></div>
+                <div class="border four"></div>
+        
+                <div class="line one"></div>
+                <div class="line two"></div>
+                <div class="line three"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    <div class="toast" id="toast">
+        <div class="toast-content ">
+            <i class="icon fas fa-solid fa-check check "></i>
+            <div class="message">
+                <span class="text text-1 " id="toast-topic">Success</span>
+                <span class="text text-2 " id="toast-msg">You have successfully send the msg</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark text-black close" onclick="hideToast()"></i>
+        <div id="processIndicator"></div>
+    </div>
+    <div id="overlay" class="hidden"></div>
+    <div id="customAlert" class="hidden">
+        <div id="alertMessage"></div>
+        <div id="posiClose"><button id="closeAlert">Close</button></div>
+    </div>
+    <div class="context">
+        <div id="fixedheader">
+            <div class="headers">
+                <span><a href="#">Piyush|Portfolio</a> </span>
+                <span id="itemHeaders">
+                    
+                    <a href="#about"> <span class="hivorText">About</span></a>
+                    <!-- <a href="#work"><span class="hivorText">Work</span></a> -->
+                    <a href="#skillsSection"> <span class="hivorText">Skills</span></a>
+                    <!-- <a href="#projects"> <span class="hivorText">Projects</span></a> -->
+                    <a href="#contact"><span class="hivorText">Contact</span></a>
+                    <span class="hivorText headericons" id="githubIcon">
+                        <a href="https://github.com/Prince10z" target="_blank">
+                            <i class="fa-brands fa-github fa-lg" style="color: #b2a4e0;"></i>
+                        </a>
+                    </span>
+                    <span class="hivorText headericons" id="linkedinIcon">
+                        <a href="https://www.linkedin.com/in/piyush-thakur-5268a3226/" target="_blank">
+                            <i class="fa-brands fa-linkedin fa-lg" style="color: #b2a4e0;"></i>
+                        </a>
+                    </span>
+
+                    
+                </span>
+                <span id="otherItem" onclick="showSidebar()">
+                    <!-- Content for smaller screens, such as a mobile menu -->
+                    <a href="#menu" class="hivorText"><i class="fa-solid fa-bars"></i></a>
+                </span>
+                
+            </div>
+            
+        </div>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()">
+                    <a >
+                      <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" 
+                              fill="white" 
+                              stroke="white" 
+                              stroke-width="20" />
+                      </svg>
+                    </a>
+                  </li>
+                  
+                <li><a href="#about" onclick="hideSidebar()">About</a></li>
+                <!-- <li><a href="#work" onclick="hideSidebar()">Work</a></li> -->
+                <li><a href="#skillsSection" onclick="hideSidebar()">Skills</a></li>
+                <!-- <li><a href="#projects" onclick="hideSidebar()">Projects</a></li> -->
+                <li><a href="#contact" onclick="hideSidebar()">Contact</a></li>
+                <li style="display: flex; justify-content: space-evenly; list-style: none; width: 100%;" >
+                    <a href="https://github.com/Prince10z" target="_blank">
+                        <i class="fa-brands fa-github fa-lg social-icon" ></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/piyush-thakur-5268a3226/" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-lg social-icon" ></i>
+                    </a></li>
+              </ul>
+        
+        
+
+
+        <div class="mainSaction">
+                <div id="Saction1">
+                    <div class="about">
+                        <h1>
+                            <a href="#" class="typewrite" data-period="2000"
+                                data-type='[ "Hi, I am Piyush Thakur", "I am a full-stack developer.", "I Love Design.", "I Love to Develop.", "Welcome to my portfolio!" ]'>
+                                <span class="wrap"></span>
+                            </a>
+                        </h1>
+                        <br>
+                        <div>
+                            <p>
+                                A passionate full-stack developer dedicated to creating dynamic and efficient web solutions.My journey in development is fueled by curiosity and a love for solving complex challenges.
+                            </p>
+                            <p>
+                                I specialize in designing user-friendly interfaces and building robust back-end systems. My expertise lies in turning innovative ideas into functional applications that deliver meaningful impact.
+                            </p>
+                            <p>
+                                Feel free to explore my portfolio to learn more about my projects and achievements. If you’re interested in collaborating or have any questions, don’t hesitate to reach out!
+                        </div>
+                    </div>
+                    <div style="width: 40px;"></div>
+                    <div id="ProfileImage" >
+                        <img src="./assets/images/IMG_0174.jpg" alt="Profile Image" class="shadow-lg" />
+                    </div>
+                </div>
+            </div>
+            <div class="arrow" onclick="scrollDown()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <section id="about" style="padding: 20px;">
+                <div class="headings">INTRODUCTION</div>
+                <h1 id="intro">
+                </h1>
+                <br>
+                <a href="/assets/resume/ResumePiyushThakur(MERN).pdf" target="_blank" download><button class="buttonSubmit">Download Resume</button></a>
+            </section>
+            <section id="skillsSection">
+
+                <div class="headings skillstitle" style="margin-top: 70px; text-align: center;">SKILLS</div>
+                <div class="skills">
+                    <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/html.png" alt="HTML">
+                        <div class="skillsName">HTML</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/css.png" alt="CSS">
+                        <div class="skillsName">CSS</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/nodejs.png" alt="Node.js">
+                        <div class="skillsName">Node.js</div>
+                      </div>
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/express.png" alt="Express">
+                        <div class="skillsName">Express</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/react.png" alt="React Logo">
+                        <div class="skillsName">ReactJS</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/flutter.png" alt="Flutter Logo">
+                        <div class="skillsName">Flutter</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/firebase.png" alt="Firebase Logo">
+                        <div class="skillsName">Firebase</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/mongodb.png" alt="MongoDB Logo">
+                        <div class="skillsName">MongoDB</div>
+                      </div>
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/tailwind.png" alt="Tailwind Logo">
+                        <div class="skillsName">Tailwind</div>
+                      </div>
+
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/bootstrap.png" alt="Bootstrap Logo">
+                        <div class="skillsName">Bootstrap</div>
+                      </div>
+                      
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/docker.png" alt="Docker Logo">
+                        <div class="skillsName">Docker</div>
+                      </div>
+                      <div class="skillsDiv">
+                        <img class="skillsImage" src="./assets/logos/github.png" alt="GitHub Logo">
+                        <div class="skillsName">GitHub</div>
+                      </div>
+    
+                </div>
+            </section>
+
+            <!-- Moved Contact form here -->
+
+            <div id="contact" >
+                <form name="form1">
+                    <span style="font-size: 30px; "><span style="color: #b2a4e0;">C</span>ontact <span
+                            style=" color: #b2a4e0;">m</span>e</span>
+                    <input type="text" class="formitem" id="fullname" placeholder="Enter Your Full Name..." autocomplete="off" style="text-align: center;">
+                    <input type="email" class="formitem" id="email" placeholder="Enter Your Email..." autocomplete="off" style="text-align: center;">
+                    <textarea class="formitem" id="msg" rows="4" cols="50" placeholder="Your Message..."
+                        autocomplete="off" style="text-align: center;"></textarea>
+                    <button id="submitForm" class="buttonSubmit">Send Message</button>
+                </form>
+            </div>
+            </div>
+    </div>
+    <div class="testcase"></div>
+    </div>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+
+    <script src="./js/script.js"></script>
+    <script type="module" src="./js/animationstyles.js"></script>
+    <script src="./js/linkes.js"></script>
+
+</body>
+
+</html>
