@@ -1,5 +1,25 @@
 const cursorDot = document.querySelector("[data-cursor-dot]");
 const cursorOutline = document.querySelector("[data-cursor-outline]");
+const sendingUrl = "https://backendportfolio-1dz3.onrender.com/resume/send";
+const startserverUrl =
+  "https://backendportfolio-1dz3.onrender.com/resume/liveServer";
+const myStartServerHeaders = new Headers();
+myStartServerHeaders.append(
+  "Content-Type",
+  "application/x-www-form-urlencoded"
+);
+const reqStart = {
+  method: "GET",
+  headers: myStartServerHeaders,
+};
+fetch(startserverUrl, reqStart)
+  .then((response) => {
+    console.log(response.status);
+  })
+  .catch((e) => {
+    console.error("Error in sending message:", e.message);
+  });
+
 window.addEventListener("mousemove", function (e) {
   cursorDot.style.display = "block";
   cursorOutline.style.display = "block";
@@ -36,12 +56,11 @@ function hideSidebar() {
 }
 ////
 
-const sendingUrl = "https://backendportfolio-1dz3.onrender.com/resume/send";
 const headerbackground = document.getElementById("fixedheader");
 const arrows = document.getElementsByClassName("arrow");
 window.addEventListener("scroll", function () {
   const scrolledPosition = window.scrollY;
-  console.log("Scrolled:", scrolledPosition);
+  // console.log("Scrolled:", scrolledPosition);
   if (scrolledPosition >= 500) {
     arrows[0].style.display = "none";
   } else {
